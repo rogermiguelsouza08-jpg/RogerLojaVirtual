@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roger Pesca & Aventura</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#00695c,#004d40);
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:800;
+    color:#ffeb3b;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#ffeb3b;
+    color:black;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.section-title{
+    text-align:center;
+    margin:60px 0 30px;
+    color:#004d40;
+    font-size:2.3rem;
+}
+
+.products{
+    padding:0 8% 60px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.product{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.product img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    color:#004d40;
+}
+
+.price{
+    margin:12px 0;
+    color:#2e7d32;
+    font-size:1.4rem;
+    font-weight:bold;
+}
+
+.buy-btn{
+    width:100%;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    background:#00695c;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.buy-btn:hover{
+    background:#004d40;
+}
+
+.carrinho{
+    background:white;
+    max-width:1000px;
+    margin:50px auto;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.item-carrinho{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+.info-produto{
+    display:flex;
+    flex-direction:column;
+}
+
+.remover-btn{
+    background:#d32f2f;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.remover-btn:hover{
+    background:#b71c1c;
+}
+
+#totalCarrinho{
+    margin-top:20px;
+    color:#2e7d32;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.about{
+    background:white;
+    padding:70px 8%;
+    text-align:center;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+footer{
+    background:#004d40;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:768px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+🎣 Roger Pesca & Aventura
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Início</a></li>
+<li><a href="#">Produtos</a></li>
+<li><a href="#">Carrinho</a></li>
+<li><a href="#">Contato</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Roger Pesca & Aventura</h1>
+
+<p>
+Tudo para sua próxima aventura de pesca!
+</p>
+
+<a href="#produtos" class="btn">
+Ver Produtos
+</a>
+
+</div>
+
+</section>
+
+<section class="products" id="produtos">
+
+<h2 class="section-title">
+Produtos em Destaque
+</h2>
+
+<div class="product-grid">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1589190058426-2ef0ea0d3343">
+
+<div class="product-info">
+
+<h3>Vara Premium Carbono</h3>
+
+<p>
+Alta resistência e leveza.
+</p>
+
+<div class="price">
+R$ 349,90
+</div>
+
+<button
+class="buy-btn"
+onclick="adicionarCarrinho(
+1,
+'Vara Premium Carbono',
+349.90
+)">
+Adicionar ao Carrinho
+</button>
+
+</div>
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1534043464124-3be32fe000c9">
+
+<div class="product-info">
+
+<h3>Molinete Profissional</h3>
+
+<p>
+Ideal para rios e pesqueiros.
+</p>
+
+<div class="price">
+R$ 279,90
+</div>
+
+<button
+class="buy-btn"
+onclick="adicionarCarrinho(
+2,
+'Molinete Profissional',
+279.90
+)">
+Adicionar ao Carrinho
+</button>
+
+</div>
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c">
+
+<div class="product-info">
+
+<h3>Kit Iscas Premium</h3>
+
+<p>
+Kit completo de iscas artificiais.
+</p>
+
+<div class="price">
+R$ 89,90
+</div>
+
+<button
+class="buy-btn"
+onclick="adicionarCarrinho(
+3,
+'Kit Iscas Premium',
+89.90
+)">
+Adicionar ao Carrinho
+</button>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="carrinho">
+
+<h2 class="section-title">
+🛒 Carrinho
+</h2>
+
+<div id="listaCarrinho">
+<p>Nenhum produto adicionado.</p>
+</div>
+
+<h3 id="totalCarrinho">
+Total: R$ 0,00
+</h3>
+
+</section>
+
+<section class="about">
+
+<h2 class="section-title">
+Sobre a Loja
+</h2>
+
+<p>
+A Roger Pesca & Aventura oferece equipamentos de pesca de alta qualidade para pescadores iniciantes e profissionais. Aqui você encontra varas, molinetes, carretilhas, iscas e muito mais.
+</p>
+
+</section>
+
+<footer>
+
+<h3>Roger Pesca & Aventura</h3>
+
+<p>
+© 2026 Todos os direitos reservados.
+</p>
+
+</footer>
+
+<script>
+
+let carrinho = [];
+
+function adicionarCarrinho(id,nome,preco){
+
+    const itemExistente =
+    carrinho.find(
+    item => item.id === id
+    );
+
+    if(itemExistente){
+        itemExistente.quantidade++;
+    }
+    else{
+        carrinho.push({
+            id:id,
+            nome:nome,
+            preco:preco,
+            quantidade:1
+        });
+    }
+
+    atualizarCarrinho();
+}
+
+function removerCarrinho(id){
+
+    const index =
+    carrinho.findIndex(
+    item => item.id === id
+    );
+
+    if(index !== -1){
+
+        carrinho[index].quantidade--;
+
+        if(carrinho[index].quantidade <= 0){
+            carrinho.splice(index,1);
+        }
+
+    }
+
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho(){
+
+    const lista =
+    document.getElementById(
+    "listaCarrinho"
+    );
+
+    const total =
+    document.getElementById(
+    "totalCarrinho"
+    );
+
+    lista.innerHTML = "";
+
+    let soma = 0;
+
+    if(carrinho.length === 0){
+
+        lista.innerHTML =
+        "<p>Nenhum produto adicionado.</p>";
+
+        total.innerHTML =
+        "Total: R$ 0,00";
+
+        return;
+    }
+
+    carrinho.forEach(produto=>{
+
+        const subtotal =
+        produto.preco *
+        produto.quantidade;
+
+        soma += subtotal;
+
+        lista.innerHTML += `
+        
+        <div class="item-carrinho">
+
+            <div class="info-produto">
+
+                <strong>
+                ${produto.nome}
+                </strong>
+
+                <span>
+                Quantidade:
+                ${produto.quantidade}
+                </span>
+
+                <span>
+                R$ ${subtotal.toFixed(2)}
+                </span>
+
+            </div>
+
+            <button
+            class="remover-btn"
+            onclick="removerCarrinho(${produto.id})">
+            Remover
+            </button>
+
+        </div>
+
+        `;
+    });
+
+    total.innerHTML =
+    "Total: R$ " +
+    soma.toFixed(2);
+}
+
+</script>
+
+</body>
+</html>
+<section class="carrinho">
+
+    <h2 class="section-title">💳 Forma de Pagamento</h2>
+
+    <div class="pagamento">
+
+        <label>
+            <input type="radio" name="pagamento" value="Pix" checked>
+            PIX
+        </label>
+
+        <label>
+            <input type="radio" name="pagamento" value="Cartão de Crédito">
+            Cartão de Crédito
+        </label>
+
+        <label>
+            <input type="radio" name="pagamento" value="Cartão de Débito">
+            Cartão de Débito
+        </label>
+
+        <label>
+            <input type="radio" name="pagamento" value="Boleto">
+            Boleto Bancário
+        </label>
+
+        <br><br>
+
+        <button class="buy-btn" onclick="finalizarPedido()">
+            Finalizar Pedido
+        </button>
+
+    </div>
+
+</section>
